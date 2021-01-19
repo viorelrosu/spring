@@ -1,0 +1,69 @@
+package t7.ej07;
+
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet("/Ej07")
+public class Ej07 extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setContentType("text/html");
+		Map<String, String> colores = new HashMap<>();
+		colores.put("azul","azul");
+		colores.put("rojo","rojo");
+		colores.put("amarillo","amarillo");
+		colores.put("verde","verde");
+		
+		String coloresInputs = generaCheckbox("colores", colores, "azul");
+		String coloresSelect = generaSelect("colores", colores, "amarillo");
+		String coloresRadio = generaRadio("colores", colores, "verde");
+		
+		response.getWriter().println("<form>");
+		response.getWriter().println(coloresInputs +"<br/><br>");
+		response.getWriter().println(coloresSelect+"<br /><br/>");
+		response.getWriter().println(coloresRadio);
+		response.getWriter().println("</form>");
+		
+	}
+
+	private String generaCheckbox(String nombre, Map<String, String> colores, String seleccionado) {
+		String res = "";
+		for( String k: colores.keySet() ) {
+			String checked = (colores.get(k) == seleccionado ? "checked=\"checked\"" : "");
+			res += "<input type=\"checkbox\" name=\""+nombre+"[]\" value=\""+colores.get(k)+"\" id=\""+colores.get(k)+"\" "+checked+" /><label for=\""+colores.get(k)+"\">"+k+"</label><br />";
+		}
+		return res;
+	}
+	
+	private String generaRadio(String nombre, Map<String, String> array, String seleccionado) {
+		String res = "";
+		for( String k: array.keySet() ) {
+			String checked = (array.get(k) == seleccionado ? "checked=\"checked\"" : "");
+			res += "<input type=\"radio\" name=\""+nombre+"[]\" value=\""+array.get(k)+"\" id=\""+array.get(k)+"\" "+checked+" /><label for=\""+array.get(k)+"\">"+k+"</label><br />";
+		}
+		return res;
+	}
+	
+	private String generaSelect(String nombre, Map<String, String> array, String seleccionado) {
+		String res = "<select name=\""+nombre+"\">";
+		for( String k: array.keySet() ) {
+			String checked = (array.get(k) == seleccionado ? "selected=\"selected\"" : "");
+			res += "<option value=\""+array.get(k)+"\"  "+checked+" />"+k+"</option>";
+		}
+		res += "</select>";
+		return res;
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doGet(request, response);
+	}
+
+}

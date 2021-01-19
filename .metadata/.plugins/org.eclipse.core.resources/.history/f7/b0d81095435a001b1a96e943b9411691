@@ -1,0 +1,27 @@
+<%-- este metodo calcula el doble de un número --%>
+<%! 
+
+public int doble(int x) {
+	return 2*x;
+} 
+
+%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Hola</title>
+</head>
+<body>
+	<h1>Hola</h1>
+	<%
+		for(int i =1; i<=5; i++) {
+			out.println("<h"+i+">Hola" + doble(i)+"</h"+i+">");
+		}
+	%>
+	<p>
+		El doble de 1637 es <%= doble(1637) %>
+	</p>
+	<%-- este es un comentario --%>
+</body>
+</html>
