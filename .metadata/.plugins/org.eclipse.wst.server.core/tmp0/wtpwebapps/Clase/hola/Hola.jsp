@@ -2,8 +2,13 @@
 <%@page import="java.util.Map" %>
 <%@page import="java.util.HashMap" %>
 <%@page errorPage="error.jsp" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="x" uri="http://java.sun.com/jsp/jstl/xml" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
 
 <%-- este metodo calcula el doble de un número --%>
+<%-- https://pablomonteserin.com/curso/jsp-jstl/jstl-java-server-page-standard-tag-library/ --%>
 <%! 
 
 public int doble(int x) throws Exception {

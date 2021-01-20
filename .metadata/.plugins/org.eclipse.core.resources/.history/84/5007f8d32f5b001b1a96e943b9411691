@@ -1,0 +1,9 @@
+package t7.ej12.jsp.model;
+
+public class Libro {
+	private String isbn;
+	private String titulo;
+	private String categoria;
+	
+	
+}

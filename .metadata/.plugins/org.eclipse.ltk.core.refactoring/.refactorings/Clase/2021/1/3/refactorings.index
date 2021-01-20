@@ -2,3 +2,13 @@
 1611054767085	Move 'header.jsp' to 'hola'
 1611055360690	Delete element
 1611055635670	Move 'error.jsp' to 'hola'
+1611144046826	Delete element
+1611144238806	Rename type 'Hola'
+1611144692330	Rename type 'HolaJstl'
+1611144890024	Rename package 't7.jstl'
+1611146707416	Rename resource 'Libro.jsp'
+1611154753158	Rename type 'Libro'
+1611155064434	Move compilation unit
+1611155204226	Rename type 'LibroR'
+1611155755244	Delete element
+1611155760575	Delete element

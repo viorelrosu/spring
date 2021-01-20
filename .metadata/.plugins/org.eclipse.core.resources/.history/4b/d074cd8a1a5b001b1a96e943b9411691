@@ -1,0 +1,28 @@
+package t7.jsp;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import t7.jsp.domain.Persona;
+
+
+@WebServlet(name = "HolaJsp", urlPatterns = { "/HolaJsp" })
+public class HolaJsp extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		Persona persona = new Persona(1234,"Juan");
+		Persona persona2 = new Persona(12345,"Pepe");
+		List<Persona> personas = new ArrayList<>();
+		request.setAttribute("persona", persona);
+		request.getRequestDispatcher("/jsp/Hola.jsp").forward(request,response);
+	}
+
+}

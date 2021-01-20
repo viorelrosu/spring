@@ -1,0 +1,16 @@
+package t7.ej12.jsp.model;
+
+public class Libro {
+	private String isbn;
+	private String titulo;
+	private String categoria;
+	
+	public Libro(String isbn, String titulo, String categoria) {
+		super();
+		this.isbn = isbn;
+		this.titulo = titulo;
+		this.categoria = categoria;
+	}
+	
+	
+}

@@ -1,0 +1,5 @@
+package t7.ej12.jsp.model;
+
+public class Libro {
+
+}
